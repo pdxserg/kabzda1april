@@ -1,19 +1,20 @@
 import React from "react";
 
-export function Accordion() {
+export function Accordion(props:any) {
 	console.log("Accordion")
 	return (
 		<>
-			<AccordionTitle/>
-			<AccordionBody/>
+			<AccordionTitle title={ props.title}/>
+			<AccordionBody />
+
 		</>
 	)
 }
 
-function AccordionTitle() {
+function AccordionTitle(props: any) {
 	console.log("How many time rendered AccordionTitle")
 	return (
-		<h3>Menu</h3>
+		<h3>{props.title}</h3>
 
 	)
 

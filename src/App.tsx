@@ -6,12 +6,11 @@ import {Rating} from "./components/rating/Rating";
 function App() {
 	return (
 		<div className="App">
-			<PageTitle title = "This is App component"/>
+			<PageTitle titl = "This is App component"/>
 			<PageTitle title = "This component"/>
 			<Rating value ={0}/>
 			<Accordion title = "Menu"/>
-			<Accordion title = ""/>
-			<Accordion/>
+			<Accordion title = "List"/>
 			<Rating value ={4}/>
 
 		</div>

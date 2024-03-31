@@ -13,9 +13,8 @@ export function Accordion() {
 function AccordionTitle() {
 	console.log("How many time rendered AccordionTitle")
 	return (
-		<>
-			<h3>Menu</h3>
-		</>
+		<h3>Menu</h3>
+
 	)
 
 }
@@ -23,12 +22,12 @@ function AccordionTitle() {
 function AccordionBody() {
 	console.log("How many time rendered AccordionBody")
 	return (
-		<>
-			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-			</ul>
-		</>
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+
 	)
 }

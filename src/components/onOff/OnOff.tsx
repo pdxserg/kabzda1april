@@ -1,14 +1,22 @@
 // @flow
 import * as React from 'react';
+import {useState} from "react";
 
 type onOffProps = {
 	//on: boolean
 };
 
-const on = !true
+
 
 export const OnOff = (props: onOffProps) => {
+
+	let [on, setOn]= useState(false)
+
+	const turnOff =() => {on = false; setOn(false)}
+	const turnOn =() => {on = true; setOn(true)}
+
 	const onStyle={
+		cursor: "pointer",
 		width:"30px",
 		height:"20px",
 		border: "1px solid black",
@@ -16,6 +24,7 @@ export const OnOff = (props: onOffProps) => {
 		backgroundColor: on ? "green" : "white"
 	}
 	const offStyle={
+		cursor: "pointer",
 		width:"30px",
 		height:"20px",
 		border: "1px solid black",
@@ -34,8 +43,8 @@ export const OnOff = (props: onOffProps) => {
 	}
 	return (
 		<div>
-			<div style={onStyle}>on</div>
-			<div style={offStyle}>off</div>
+			<div style={onStyle} onClick={()=>{setOn(true)}}>on</div>
+			<div style={offStyle} onClick={turnOff}>off</div>
 			<div style={indicatorStyle}></div>
  		</div>
 	);

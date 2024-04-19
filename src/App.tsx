@@ -8,6 +8,8 @@ function App() {
 	return (
 		<div className="App">
 			<OnOff />
+			<OnOff />
+			<OnOff />
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

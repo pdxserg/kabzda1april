@@ -1,22 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/accordion/Accordion";
-import {Rating} from "./components/rating/Rating";
+import {RaitinNumber, Rating} from "./components/rating/Rating";
 import {OnOff} from "./components/onOff/OnOff";
 import {UncontrolledAccordion} from "./components/uncontrolledaccordion/UncontrolledAccordion";
 import {UncontrolRating} from "./components/uncontrolRating/UncontrolRating";
 
 function App() {
+
+	let [raitinValue,  setRaitinValue]=useState<RaitinNumber>(4)
 	return (
 		<div className="App">
-			<OnOff />
+			<OnOff/>
+			<div>UncontrolRating</div>
+			<UncontrolRating/>
 
-			<UncontrolRating />
-			<Rating value ={4}/>
+			<div>Rating</div>
+			<Rating value={raitinValue} setRait={setRaitinValue} />
 
 
-			<UncontrolledAccordion titleValue = "Menu" />
-			<Accordion titleValue={"Menu2"} collapsed={false}/>
+			{/*<UncontrolledAccordion titleValue="UncontrolledAccordion"/>*/}
+
+			<Accordion titleValue={"Accordion"} />
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

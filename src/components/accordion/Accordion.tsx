@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 type AccordionPropsType = {
 	titleValue: string
-	collapsed: boolean
+	//collapsed: boolean
 }
 export function Accordion(props:AccordionPropsType) {
 		// if (props.collapsed === true){
@@ -9,22 +9,24 @@ export function Accordion(props:AccordionPropsType) {
 		// 		<AccordionTitle title={ props.titleValue}/>
 		// 	)
 		// }
+	let [coll, setColl]=useState(false)
+
 		return(
 			<>
-				<AccordionTitle title={ props.titleValue}/>
+				<AccordionTitle title={ props.titleValue} onCl={()=>setColl(!coll)}/>
 				{/*{props.collapsed === false && <AccordionBody/>}*/}
-				{!props.collapsed && <AccordionBody/>}
+				{!coll&& <AccordionBody/>}
 
 			</>
 		)
 }
 type AccordionTitlePropsType = {
 	title: string
+	onCl: ()=> void
 }
 function AccordionTitle(props: AccordionTitlePropsType) {
-	console.log("How many time rendered AccordionTitle")
 	return (
-		<h3>{props.title}</h3>
+		<h3 onClick={props.onCl}>{props.title}</h3>
 
 	)
 

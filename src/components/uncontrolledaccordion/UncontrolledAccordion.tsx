@@ -12,13 +12,6 @@ export function UncontrolledAccordion(props:AccordionPropsType) {
 	let [collapsed, setCollapsed] =useState(false)
 
 
-
-		//return collapsed ? setCollapsed(false): setCollapsed(true)
-		// if(collapsed === true){
-		// 	setCollapsed(false)
-		// }else {setCollapsed(true)}
-
-
 		return(
 			<>
 				{/*<button onClick={}>Toggle</button>*/}

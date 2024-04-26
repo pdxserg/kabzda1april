@@ -9,6 +9,8 @@ import {UncontrolRating} from "./components/uncontrolRating/UncontrolRating";
 function App() {
 
 	let [raitinValue,  setRaitinValue]=useState<RaitinNumber>(4)
+	let [newCollapsed, setNewCollapsed]=useState<boolean>(false)
+
 	return (
 		<div className="App">
 			<OnOff/>
@@ -19,9 +21,9 @@ function App() {
 			<Rating value={raitinValue} setRait={setRaitinValue} />
 
 
-			{/*<UncontrolledAccordion titleValue="UncontrolledAccordion"/>*/}
+			<UncontrolledAccordion titleValue="UncontrolledAccordion"/>
 
-			<Accordion titleValue={"Accordion"} />
+			<Accordion titleValue={"Accordion"}  collapsed={newCollapsed} />
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

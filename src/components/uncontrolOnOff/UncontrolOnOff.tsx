@@ -3,18 +3,15 @@ import * as React from 'react';
 import {useState} from "react";
 
 type onOffProps = {
-	on: boolean
-	switchHandler: (v:boolean)=>void
+onChange: (on: boolean)=>void
 };
 
 
 
-export const OnOff = (props: onOffProps) => {
+export const UncontrolOnOff = (props: onOffProps) => {
 
-	// let [on, setOn]= useState(false)
-	//
-	// const turnOff =() => {on = false; setOn(false)}
-	//const turnOn =() => {on = true; setOn(true)}
+	let [on, setOn]= useState(true)
+
 
 	const onStyle={
 		cursor: "pointer",
@@ -22,7 +19,7 @@ export const OnOff = (props: onOffProps) => {
 		height:"20px",
 		border: "1px solid black",
 		display: "inline-block",
-		backgroundColor: props.on ? "green" : "white"
+		backgroundColor: on ? "green" : ""
 	}
 	const offStyle={
 		cursor: "pointer",
@@ -31,7 +28,7 @@ export const OnOff = (props: onOffProps) => {
 		border: "1px solid black",
 		display: "inline-block",
 		marginLeft: "10px",
-		backgroundColor: props.on ?"white": "red"
+		backgroundColor: on ?"": "red"
 	}
 	const indicatorStyle={
 		width:"10px",
@@ -40,13 +37,38 @@ export const OnOff = (props: onOffProps) => {
 		border: "1px solid black",
 		display: "inline-block",
 		marginLeft: "10px",
-		backgroundColor: props.on ?"yellow": "white"
+		backgroundColor: on ?"yellow": ""
 	}
+
+	const onClicked =()=>{
+		setOn(true)
+		props.onChange(true)}
+	const offClicked = ()=>{
+		setOn(false)
+		props.onChange(false)}
 	return (
 		<div>
-			<div style={onStyle} onClick={()=>props.switchHandler(true)}>on</div>
-			<div style={offStyle} onClick={()=>props.switchHandler(false)}>off</div>
+			<div style={onStyle} onClick={onClicked}  >on</div>
+			<div style={offStyle} onClick={offClicked}  >off</div>
 			<div style={indicatorStyle}></div>
  		</div>
 	);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const turnOn =() => {on = true; setOn(true)}
+//const turnOff =() => {on = false; setOn(false)}

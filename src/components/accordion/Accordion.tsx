@@ -1,39 +1,45 @@
-import React, {useState} from "react";
+import React  from "react";
 export type AccordionPropsType = {
 	titleValue: string
 	collapsed: boolean
+	accordionChangeHandler: ()=>void
+
 }
 export function Accordion(props:AccordionPropsType) {
-		if (props.collapsed === true){
-			return (
-				<AccordionTitle title={ props.titleValue}/>
-			)
-		}
+	// 	return
+	// if (props.collapsed === true){
+	// 		return (
+	// 			<AccordionTitle title={ props.titleValue}/>
+	// 		)
+	// 	}
 
 
 		return(
 			<>
-				<AccordionTitle title={ props.titleValue} />
-				{/*{props.collapsed === false && <AccordionBody/>}*/}
-				{!props.collapsed && <AccordionBody/>}
+				<AccordionTitle title={ props.titleValue}
+				            onCl={props.accordionChangeHandler}
+				/>
 
+				{!props.collapsed && <AccordionBody/>}
+				{/*{props.collapsed === false && <AccordionBody/>}*/}
 			</>
 		)
 }
 type AccordionTitlePropsType = {
 	title: string
+	onCl?: ()=>void
 
 }
 function AccordionTitle(props: AccordionTitlePropsType) {
 	return (
-		<h3 >{props.title}</h3>
+		<h3  onClick={props.onCl}>{props.title}</h3>
 
 	)
 
 }
 
 function AccordionBody() {
-	console.log("How many time rendered AccordionBody")
+
 	return (
 
 		<ul>

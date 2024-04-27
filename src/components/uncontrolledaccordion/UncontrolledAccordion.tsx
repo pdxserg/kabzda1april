@@ -9,7 +9,7 @@ export function UncontrolledAccordion(props:AccordionPropsType) {
 		// 		<AccordionTitle title={ props.titleValue}/>
 		// 	)
 		// }
-	let [collapsed, setCollapsed] =useState(false)
+	const [collapsed, setCollapsed] =useState(false)
 
 
 		return(

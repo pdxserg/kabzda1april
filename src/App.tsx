@@ -5,25 +5,42 @@ import {RaitinNumber, Rating} from "./components/rating/Rating";
 import {OnOff} from "./components/onOff/OnOff";
 import {UncontrolledAccordion} from "./components/uncontrolledaccordion/UncontrolledAccordion";
 import {UncontrolRating} from "./components/uncontrolRating/UncontrolRating";
+import {UncontrolOnOff} from "./components/uncontrolOnOff/UncontrolOnOff";
 
 function App() {
 
-	let [raitinValue,  setRaitinValue]=useState<RaitinNumber>(4)
-	let [newCollapsed, setNewCollapsed]=useState<boolean>(false)
+	const [raitinValue,  setRaitinValue]=useState<RaitinNumber>(4)
+
+	//for Accordion
+	const [isAccordionCollapsed, setIsAccordionCollapsed]=useState<boolean>(false)
+	const accordionChangeHandler= ()=>{ setIsAccordionCollapsed(!isAccordionCollapsed)}
+
+	//for   OnOff
+	let [on, setOn]= useState(true)
+
+
+
 
 	return (
 		<div className="App">
-			<OnOff/>
-			<div>UncontrolRating</div>
-			<UncontrolRating/>
-
-			<div>Rating</div>
-			<Rating value={raitinValue} setRait={setRaitinValue} />
+			<UncontrolOnOff onChange={setOn}/>
+			{on.toString()}
+			<OnOff on={on} switchHandler={(v)=>setOn(v)}/>
 
 
-			<UncontrolledAccordion titleValue="UncontrolledAccordion"/>
+			{/*<div>UncontrolRating</div>*/}
+			{/*<UncontrolRating/>*/}
 
-			<Accordion titleValue={"Accordion"}  collapsed={newCollapsed} />
+			{/*<div>Rating</div>*/}
+			{/*<Rating value={raitinValue} setRait={setRaitinValue} />*/}
+
+
+			{/*<UncontrolledAccordion titleValue="UncontrolledAccordion"/>*/}
+
+			<Accordion titleValue={"Accordion"}
+			           collapsed={isAccordionCollapsed}
+			           accordionChangeHandler={accordionChangeHandler}
+			/>
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

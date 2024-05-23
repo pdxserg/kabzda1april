@@ -6,6 +6,8 @@ import {OnOff} from "./components/onOff/OnOff";
 import {UncontrolledAccordion} from "./components/uncontrolledaccordion/UncontrolledAccordion";
 import {UncontrolRating} from "./components/uncontrolRating/UncontrolRating";
 import {UncontrolOnOff} from "./components/uncontrolOnOff/UncontrolOnOff";
+import {UncontrolledAccordionReduser} from "./components/uncontrolledaccordion/UncontrolledAccordionREDUCER";
+import {type} from "node:os";
 
 function App() {
 
@@ -18,14 +20,21 @@ function App() {
 	//for   OnOff
 	let [on, setOn]= useState(true)
 
-
-
+type ActionType={
+		type: string
+}
+const reducer= (state: boolean, action:ActionType)=>{
+		//sdddd
+	return state
+}
 
 	return (
 		<div className="App">
-			<UncontrolOnOff onChange={setOn}/>
-			{on.toString()}
-			<OnOff on={on} switchHandler={(v)=>setOn(v)}/>
+			<UncontrolledAccordionReduser titleValue={'ssss'}/>
+
+			{/*<UncontrolOnOff onChange={setOn}/>*/}
+			{/*{on.toString()}*/}
+			{/*<OnOff on={on} switchHandler={(v)=>setOn(v)}/>*/}
 
 
 			{/*<div>UncontrolRating</div>*/}
@@ -37,10 +46,10 @@ function App() {
 
 			{/*<UncontrolledAccordion titleValue="UncontrolledAccordion"/>*/}
 
-			<Accordion titleValue={"Accordion"}
-			           collapsed={isAccordionCollapsed}
-			           accordionChangeHandler={accordionChangeHandler}
-			/>
+			{/*<Accordion titleValue={"Accordion"}*/}
+			{/*           collapsed={isAccordionCollapsed}*/}
+			{/*           accordionChangeHandler={accordionChangeHandler}*/}
+			{/*/>*/}
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

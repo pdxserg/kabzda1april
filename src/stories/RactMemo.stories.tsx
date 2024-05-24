@@ -14,3 +14,11 @@ const Users  =(props: {users: Array<string>})=>{
 }
 
 
+
+
+export const Example1 =()=>{
+	return <>
+	<Counter count={10}/>
+		<Users users={['Bob','Chack','Den']}/>
+	</>
+}

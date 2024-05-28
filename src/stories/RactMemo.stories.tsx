@@ -6,17 +6,20 @@ export default {
 
 
 const SetCounter = (props: { count: number }) => {
-	console.log("num")
+	console.log("count")
 	return <div>{props.count}</div>
 }
 const Counter= React.memo(SetCounter)
+
+
+
 
 type UsersType = {
 	users: Array<string>
 }
 
 const SupUsers = (props: UsersType) => {
-	console.log("som")
+	console.log("name")
 	return <div>
 		{props.users.map((u, i) => <div key={i}>{u}</div>)}
 	</div>

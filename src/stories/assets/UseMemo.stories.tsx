@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 export default  {title: 'useMemo'}
 
@@ -9,18 +9,25 @@ export default  {title: 'useMemo'}
 	 let resultA =  1
 	 let resultB =  1
 
-	 for(let i=1; i<=a; i++){
-		 setTimeout(function() {
-			 console.log("A: " + i);
-		 }, i * 1000);
-		 resultA = resultA * i
-	 }
-	 for (let i = 1; i <= b; i++) {
-		 setTimeout(function() {
-			 console.log("Item B: " + i);
-		 }, i * 1000);
-		 resultB = resultB * i
-	 }
+	 resultA = useMemo(() => {
+		 for(let i=1; i<=a; i++){
+			 console.log("A :"+i)
+			 resultA = resultA * i
+		 }
+		 return resultA
+	 }, [a]);
+
+	 resultB  = useMemo(() => {
+		 for (let i = 1; i <= b; i++) {
+			 console.log("B :"+i)
+			 // setTimeout(function() {
+			 //  console.log("Item B: " + i);
+			 // }, i * 1000);
+			 resultB = resultB * i
+		 }
+		 return resultB
+	 }, [b]);
+
 
 	 return (
 		<div>

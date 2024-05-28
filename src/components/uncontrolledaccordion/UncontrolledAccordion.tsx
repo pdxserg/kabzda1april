@@ -3,7 +3,7 @@ type AccordionPropsType = {
 	titleValue: string
 	//collapsed: boolean
 }
-export function UncontrolledAccordion(props:AccordionPropsType) {
+ function UncontrolledAccordionMemo(props:AccordionPropsType) {
 		// if (props.collapsed === true){
 		// 	return (
 		// 		<AccordionTitle title={ props.titleValue}/>
@@ -11,7 +11,7 @@ export function UncontrolledAccordion(props:AccordionPropsType) {
 		// }
 	const [collapsed, setCollapsed] =useState(false)
 
-
+	console.log("dd")
 		return(
 			<>
 				{/*<button onClick={}>Toggle</button>*/}
@@ -49,3 +49,4 @@ function AccordionBody() {
 
 	)
 }
+export const UncontrolledAccordion= React.memo(UncontrolledAccordionMemo)

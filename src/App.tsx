@@ -30,7 +30,7 @@ const reducer= (state: boolean, action:ActionType)=>{
 
 	return (
 		<div className="App">
-			<UncontrolledAccordionReduser titleValue={'ssss'}/>
+			{/*<UncontrolledAccordionReduser titleValue={'ssss'}/>*/}
 
 			{/*<UncontrolOnOff onChange={setOn}/>*/}
 			{/*{on.toString()}*/}
@@ -44,12 +44,13 @@ const reducer= (state: boolean, action:ActionType)=>{
 			{/*<Rating value={raitinValue} setRait={setRaitinValue} />*/}
 
 
-			{/*<UncontrolledAccordion titleValue="UncontrolledAccordion"/>*/}
+			<UncontrolledAccordion titleValue="UncontrolledAccordion"/>
+			console.log("dd")
 
-			{/*<Accordion titleValue={"Accordion"}*/}
-			{/*           collapsed={isAccordionCollapsed}*/}
-			{/*           accordionChangeHandler={accordionChangeHandler}*/}
-			{/*/>*/}
+			<Accordion titleValue={"Accordion"}
+			           collapsed={isAccordionCollapsed}
+			           accordionChangeHandler={accordionChangeHandler}
+			/>
 
 			{/*<PageTitle title = "This is App component"/>*/}
 			{/*<PageTitle title = "This component"/>*/}

@@ -5,14 +5,14 @@ export type AccordionPropsType = {
 	accordionChangeHandler: ()=>void
 
 }
-export function Accordion(props:AccordionPropsType) {
+ function AccordionMemo(props:AccordionPropsType) {
 	// 	return
 	// if (props.collapsed === true){
 	// 		return (
 	// 			<AccordionTitle title={ props.titleValue}/>
 	// 		)
 	// 	}
-
+	 console.log(222)
 
 		return(
 			<>
@@ -50,3 +50,4 @@ function AccordionBody() {
 
 	)
 }
+export const Accordion= React.memo(AccordionMemo)

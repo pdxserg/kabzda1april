@@ -31,7 +31,7 @@ export const Example1 = () => {
 	const [count, setCount] = useState(2)
 	const [users, setUsers] = useState(['Bob', 'Chack', 'Den'])
 	const handler = ()=> {
-		setUsers([...users, 'ddd'+ new Date().getTime()])
+		setUsers([...users, 'ddd'])
 	}
 
 

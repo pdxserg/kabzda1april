@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import {array} from "prop-types";
 
-export default {title: 'useMemo'}
+export default {title: 'useMemo2'}
 
 
 
@@ -21,13 +21,13 @@ const SuperUser2 = (props : {b:Array<string> })=>{
 const User2= React.memo(SuperUser2)
 export const example2=()=>{
 	console.log("eee")
-		const [a, setA] = useState(0)
-	const [b, setB]=useState<Array<string>>(['ddad','eee','qqAq'])
+	const [a, setA] = useState(0)
+	const [b, setB] = useState<Array<string>>(['ddad', 'eee', 'qqAq'])
 
-const newArr=useMemo(()=>{
-		const newArr= b.filter(b=> b.toLowerCase().indexOf("a")>-1)
-	return newArr
-	},[b])
+	const newArr = useMemo(() => {
+		const newArr = b.filter(b => b.toLowerCase().indexOf("a") > -1)
+		return newArr
+	}, [b])
 
 
 	return <div>
@@ -120,7 +120,7 @@ export const Example1 = () => {
 	</>
 }
 // -------------------------------------------------------------------
-export const UseMemoStories = () => {
+export const UseMemo2Stories = () => {
 	const [a, setA] = useState<number>(5)
 	const [b, setB] = useState<number>(5)
 

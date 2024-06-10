@@ -120,7 +120,7 @@ export const Example1 = () => {
 	</>
 }
 // -------------------------------------------------------------------
-export const UseMemo2Stories = () => {
+export const UseMemoUseCallBackStories = () => {
 	const [a, setA] = useState<number>(5)
 	const [b, setB] = useState<number>(5)
 

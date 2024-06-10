@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {example2} from "./UseMemo2.stories";
+import {example2} from "./UseMemoUseCallBack.stories";
 
 export default {
 	title: 'Use.memo demo'

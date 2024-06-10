@@ -1,41 +1,48 @@
 import React, {useMemo, useState} from "react";
+import {example2} from "./UseMemo2.stories";
 export default {
 	title: 'Use.memo demo'
 }
 
 
-const SetCounter2 = (props: { count: number }) => {
-	console.log("count")
-	return <div>{props.count}</div>
-}
-const Counter2= React.memo(SetCounter2)
 
-const SupBooks = (props: { newArray: Array<string> }) => {
-	console.log("book")
-	return <div>
-		{props.newArray.map((e, i) => <div key={i}>{e}</div>)}
-	</div>
-}
-
-const Books= React.memo(SupBooks)
 
 
 export const Example2 = () => {
+	console.log("counter")
 	const [count, setCount] = useState(0)
 	const [books, setUsers] = useState(['JS', 'HTML', 'CSS'])
 
-	const newArr = useMemo(() => {
-		const newArr = books.filter(b => b.toLowerCase().indexOf("a") > -1)
-		return newArr
-	}, [books])
-	const handler = ()=> {
+
+
+	const addBook = ()=> {
 		setUsers([...books, 'React'])
 	}
+	const memorized =useMemo(()=>{
+		 return addBook
+	},[books])
+
+
 
 	return <>
-		<Counter2 count={count}/>
-		<Books newArray={newArr}/>
-		<button onClick={handler}>new book</button>
+		<Books  addBook={memorized}/>
+		<SuperCounter  count={count}/>
+
 		<button onClick={() => setCount(count + 1)}>+</button>
 	</>
 }
+const SupBooks = (props: { addBook:()=>void }) => {
+	console.log("book")
+	return <div>
+		<button onClick={props.addBook}>new book</button>
+
+	</div>
+}
+const Books= React.memo(SupBooks)
+
+const Counter =(props:{count:number})=>{
+	return <div>
+		{props.count}
+	</div>
+}
+const SuperCounter= React.memo(Counter)

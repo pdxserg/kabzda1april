@@ -22,7 +22,7 @@ export const SimpleExample = () => {
 	useEffect(() => {
 		console.log("useEffect wil render one time+ if counter changed")
 		document.title= counter.toString()
-	})
+	}, )
 
 	return (
 		<>

@@ -69,28 +69,22 @@ export const setTimeOut = () => {
 
 export const setDate = () => {
 
-	const [date, setDate] = useState(new Date())
+	const [date, setDate] = useState(0)
 
 	console.log("use  demo")
 
 
-	useEffect(() => {
-		setInterval(() => {
-			console.log("setTimeout")
-setDate(new Date())
-		},1000)
-	},[ ])
 	// useEffect(() => {
-	// 	setTimeout(() => {
+	// 	setInterval(() => {
 	// 		console.log("setTimeout")
-	// 		document.title= counter.toString()
-	// 	},1000)
-	// },[counter])
+ // setDate(state=> state+1)
+	// 	},1000 )
+	// },[  ])
 
 
 	return (
 		<>
-			{date.toLocaleTimeString()}
+			1:22:{date}pm
 		</>
 	)
 }

@@ -33,26 +33,3 @@ export const SimpleExample = () => {
 		</>
 	)
 }
-
-export const setTimeOut = () => {
-
-	const [counter, setCounter] = useState(1)
-	const [fake, setFake] = useState(1)
-	console.log("use  demo")
-
-
-	setTimeout(() => {
-		console.log("setTimeout")
-		document.title= counter.toString()
-	},1000)
-
-	return (
-		<>
-			Hello: {counter} {fake}
-			<button onClick={() => setCounter(counter + 1)}>s+</button>
-			<button onClick={() => setFake(fake + 1)}>fake</button>
-
-		</>
-	)
-}
-

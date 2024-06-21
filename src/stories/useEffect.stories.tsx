@@ -41,17 +41,56 @@ export const setTimeOut = () => {
 	console.log("use  demo")
 
 
-	setTimeout(() => {
-		console.log("setTimeout")
-		document.title= counter.toString()
-	},1000)
+	useEffect(() => {
+		setInterval(() => {
+			console.log("setTimeout")
+			document.title= counter.toString()
+		},1000)
+	},[counter])
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		console.log("setTimeout")
+	// 		document.title= counter.toString()
+	// 	},1000)
+	// },[counter])
+
 
 	return (
 		<>
 			Hello: {counter} {fake}
 			<button onClick={() => setCounter(counter + 1)}>s+</button>
-			<button onClick={() => setFake(fake + 1)}>fake</button>
+			<button onClick={() => setFake(fake + 1)}>fake</button>zz
+			<div>
+				<p>Current Date and Time: {new Date().toLocaleString()}</p>
+			</div>
+		</>
+	)
+}
 
+export const setDate = () => {
+
+	const [date, setDate] = useState(new Date())
+
+	console.log("use  demo")
+
+
+	useEffect(() => {
+		setInterval(() => {
+			console.log("setTimeout")
+setDate(new Date())
+		},1000)
+	},[ ])
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		console.log("setTimeout")
+	// 		document.title= counter.toString()
+	// 	},1000)
+	// },[counter])
+
+
+	return (
+		<>
+			{date.toLocaleTimeString()}
 		</>
 	)
 }

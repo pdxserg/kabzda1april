@@ -74,18 +74,38 @@ export const setDate = () => {
 	console.log("use  demo")
 
 
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		console.log("setTimeout")
- // setDate(state=> state+1)
-	// 	},1000 )
-	// },[  ])
+	useEffect(() => {
+	//
+	// 	setInterval(() => {setDate(state=> state+1)},1000 )
+	// 	console.log("setTimeout")
+	 },[  ])
 
 
 	return (
 		<>
-			1:22:{date}pm
+			22:13:{date}pm
 		</>
 	)
+}
+
+
+
+export function Clock() {
+	const [date, setDate] = useState(new Date());
+
+	console.log("clock")
+	useEffect(() => {
+		console.log("useEffect")
+		// const timer = setInterval(() => setDate(new Date()), 1000);
+		console.log("setInterval")
+
+	}, []);
+
+	return (
+		<div>
+			<h2>{date.toLocaleString()}  </h2>
+
+		</div>
+	);
 }
 

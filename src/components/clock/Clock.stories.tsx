@@ -1,18 +1,16 @@
-import {useState} from "react";
+
+import {action} from '@storybook/addon-actions'
+
+import React, {useState} from "react";
+import {Clock} from "../../stories/useEffect.stories";
 
 
-type Clocktype={}
-// const Clock =(props: Clocktype)=>{
-const Clock:React.FC<Clocktype>  =(props)=>{
-	const [date,setDate]=useState(new Date())
-	return(
-		<div>
-			<span>{date.getHours()}</span>
-			:
-			<span>{date.getMinutes()}</span>
-			:
-			<span>{date.getSeconds()}</span>
+export default  {
+	title:'Clock',
+	component: Clock,
+};
+export  const BaseExample =()=>{
 
-		</div>
-	)
+	return <Clock
+	/>
 }

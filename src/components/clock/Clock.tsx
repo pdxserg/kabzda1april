@@ -1,17 +1,39 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
-type Clocktype={}
-// const Clock =(props: Clocktype)=>{
-const Clock:React.FC<Clocktype>  =(props)=>{
-	const [date,setDate]=useState(new Date())
-	return(
+type Clocktype = {}
+export const Clock = (props: Clocktype) => {
+// export const Clock:React.FC<Clocktype>  =(props)=>{
+	const [date, setDate] = useState(new Date())
+
+	useEffect(() => {
+		setInterval(() => {
+			setDate(new Date())
+		}, 1000)
+	}, []);
+
+	const seconds = date.getSeconds() < 10
+		? "0"+date.getSeconds()
+		:date.getSeconds()
+
+	const minutes = date.getMinutes() < 10
+		? "0"+date.getMinutes()
+		:date.getMinutes()
+
+	const hours = date.getHours() < 10
+		? "0"+date.getHours()
+		:date.getHours()
+const padWithZero =(a)=>{
+	a < 10 ? "0"+a :a
+}
+	return (
 		<div>
-			<span>{date.getHours()}</span>
+			<h2>{date.toDateString()}</h2>
+			<span>{hours}</span>
 			:
-			<span>{date.getMinutes()}</span>
+			<span>{minutes}</span>
 			:
-			<span>{date.getSeconds()}</span>
+			<span>{seconds}</span>
 
 		</div>
 	)

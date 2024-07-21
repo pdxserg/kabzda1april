@@ -10,9 +10,11 @@ export const Clock = (props: Clocktype) => {
 	const [date, setDate] = useState(new Date())
 
 	useEffect(() => {
-		setInterval(() => {
+		const intervalID= setInterval(() => {
+			console.log("tick")
 			setDate(new Date())
 		}, 1000)
+		return ()=> clearInterval(intervalID)
 	}, []);
 
 	const hours =padWithZero(date.getHours())

@@ -2,39 +2,37 @@ import {useEffect, useState} from "react";
 import './Clock.css';
 
 
-
 type Clocktype = {}
-const padWithZero =(num:number)=>{
-	return num < 10 ? "0"+num :num
+const padWithZero = (num: number) => {
+	return num < 10 ? "0" + num : num
 }
 export const Clock = (props: Clocktype) => {
 // export const Clock:React.FC<Clocktype>  =(props)=>{
 	const [date, setDate] = useState(new Date())
 
 	useEffect(() => {
-
-		const intervalID= setInterval(() => {
-			console.log("tick")
+		const intervalID = setInterval(() => {
 			setDate(new Date())
 		}, 1000)
-		return ()=>{
-			  clearInterval(intervalID)
+		return () => {
+			clearInterval(intervalID)
 		}
-
 	}, []);
 
-	const hours =padWithZero(date.getHours())
-	const minutes = padWithZero(date.getMinutes())
+	let hours =  date.getHours()
+	hours = hours % 12
+	hours = hours ? hours : 12;
+	const minutes: any = padWithZero(date.getMinutes())
 	const seconds = padWithZero(date.getSeconds())
+	const ampm = hours >= 12 ? ' am' : ' pm';
 	return (
 		<div className="clock">
 
-			<div className="digit-clock">{hours}:{minutes}:{seconds}</div>
-
+			<div className="digit-clock">{hours}:{minutes}:{seconds}{ampm}</div>
 
 			<div className="hour_hand"
 			     style={{
-				     transform: `rotateZ(${date.getHours() * 6}deg)`
+				     transform: `rotateZ(${(hours % 12) * 30 + date.getMinutes() * 0.5}deg)`
 			     }}>
 			</div>
 			<div className="min_hand"

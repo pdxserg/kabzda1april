@@ -10,8 +10,11 @@ export default  {
 	title:'Clock',
 	component: Clock,
 };
-export  const BaseExample =()=>{
+export  const Analog =()=>{
 
-	return <Clock
-	/>
+	return <Clock frame={false}/>
+}
+export  const Digital =()=>{
+
+	return <Clock frame={true}/>
 }

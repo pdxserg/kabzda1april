@@ -25,8 +25,12 @@
     border: 2px solid #fff;
 }
 .digit-clock{
+    font-weight: 800;
+    font-size: 80px;
     position: absolute;
-    right: -150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .hour_hand {
     position: absolute;

@@ -1,11 +1,10 @@
 import React from "react";
-import {padWithZero} from "./Clock";
+import {ClockPropsType, padWithZero} from "./Clock";
 
 
 
-export type ClockPropsType = {
-	date: Date
-}
+
+
 export const ClockD: React.FC<ClockPropsType> = ({date}) => {
 	let hours = date.getHours()
 	hours = hours % 12

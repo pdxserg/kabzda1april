@@ -1,8 +1,10 @@
 import React from "react";
 import './ClockAD.css'
-import {ClockPropsType} from "./Clock";
 
 
+export type ClockPropsType = {
+	date: Date
+}
 export const ClockA: React.FC<ClockPropsType> = ({date}) => {
 
 

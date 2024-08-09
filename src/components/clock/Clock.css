@@ -24,14 +24,14 @@
 /*    transform: translate(-50%, -50%);*/
 /*    border: 2px solid #fff;*/
 /*}*/
-/*.digit-clock{*/
-/*    font-weight: 800;*/
-/*    font-size: 80px;*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*}*/
+.digit-clock{
+    font-weight: 800;
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /*.hour_hand {*/
 /*    position: absolute;*/
 /*    width: 6px;*/

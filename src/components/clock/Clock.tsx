@@ -1,9 +1,7 @@
 import {useEffect, useState} from "react";
 import './Clock.css';
 
-export type ClockPropsType = {
-	date: Date
-}
+
 type Clocktype = {
 	frame:boolean
 }

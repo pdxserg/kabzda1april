@@ -12,7 +12,6 @@ type onOffProps = {
 export const OnOff = (props: onOffProps) => {
 
 	// let [on, setOn]= useState(false)
-	//
 	// const turnOff =() => {on = false; setOn(false)}
 	//const turnOn =() => {on = true; setOn(true)}
 

@@ -27,7 +27,7 @@ export const ClockQ = ({frame}: ClockQPropsType) => {
 
 		case "analog" :
 		default:
-			clock = <ClockA/>
+			clock = <ClockA date={date}/>
 	}
 	return (
 		<>

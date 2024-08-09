@@ -23,7 +23,6 @@ export const ClockQ = ({frame}: ClockQPropsType) => {
 	switch (frame) {
 		case "digital":
 			clock = <ClockD date={date}/>
-			// <div>{padWithZero(date.getHours())}:{padWithZero(date.getMinutes())}:{padWithZero(date.getSeconds())} </div>
 			break;
 
 		case "analog" :

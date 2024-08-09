@@ -5,7 +5,7 @@ import './Clock.css';
 type Clocktype = {
 	frame:boolean
 }
-const padWithZero = (num: number) => {
+ export const padWithZero = (num: number) => {
 	return num < 10 ? "0" + num : num
 }
 export const Clock = (props: Clocktype) => {
